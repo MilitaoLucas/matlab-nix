@@ -21,27 +21,94 @@ else
   ++ (with pkgs; [
     # Not packages in MathWorks' lists, because a Debian system always has
     # them.
-    bashInteractive
-    coreutils
-    which
-    libx11
-    libxext
-    libxi
-    libxrender
-    libsm
-    libxkbcommon
-    libglvnd
-    dbus
-    freetype
-
-    # mex compiles with the system gcc.
-    gcc
-
     # In the lists of earlier releases, but not in the R2026b list. The
     # R2026b environment was tested with them, so they stay.
+    # mex compiles with the system gcc.
+    alsa-lib # libasound2
+    at-spi2-atk
+    at-spi2-core
+    atk
+    bashInteractive
+    cacert
+    cairo
+    clang-tools
+    coreutils
+    cups
+    dbus
+    fontconfig
+    fontconfig.lib
+    freetype
+    gbenchmark
+    gcc
+    gcc15.cc.lib
+    gdk-pixbuf
+    gdk-pixbuf.out
+    gfortran
+    glamoroustoolkit.out
+    glib
+    glib.out
+    glibc
+    glibcLocales
+    gst_all_1.gst-plugins-base
+    gst_all_1.gstreamer
+    gtk2
+    gtk2-x11
     gtk3
-    pango
+    jre
+    libGL
+    libGL.out
+    libGLU.out
+    libSM.out
     libdrm
+    libgbm
+    libgcc.lib
+    libglvnd
+    libjpeg8.out
+    libjpeg_turbo
+    libpng.out
+    libselinux
+    libsm
+    libsndfile
+    libtiff
+    libuuid
+    libx11
+    libx11.out
+    libxcb
+    libxcomposite
+    libxcrypt
+    libxcrypt-legacy
     libxcursor
+    libxdamage
+    libxext
+    libxfixes
+    libxft
+    libxi
+    libxinerama
+    libxkbcommon
+    libxkbcommon.out
+    libxrandr
+    libxrender
+    libxt
+    libxtst
     libxxf86vm
+    linux-pam
+    llvmPackages.clang
+    llvmPackages.openmp
+    mesa
+    motif
+    mpi.out
+    ncurses
+    nspr
+    nss
+    openblas
+    pam
+    pango
+    pango.out
+    procps
+    python3
+    udev
+    unzip
+    which
+    xkeyboard_config
+    zlib
   ])

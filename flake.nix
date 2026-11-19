@@ -27,7 +27,7 @@
     in
     {
       overlays.default = final: prev: {
-        matlab = final.callPackage ./matlab.nix { };
+        matlab = final.callPackage ./matlab.nix { release = "R2022b"; };
       };
 
       formatter = forAllSystems (pkgs: pkgs.nixfmt-tree);

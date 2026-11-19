@@ -15,6 +15,12 @@
             import nixpkgs {
               inherit system;
               overlays = [ self.overlays.default ];
+              config = {
+                allowUnfree = true;
+                problems.handlers = {
+                  "gtk+".broken = "warn"; # or "ignore"
+                };
+              };
             }
           )
         );
@@ -81,7 +87,7 @@
           settings = {
             programs.matlab = {
               enable = true;
-              release = "R2025b";
+              release = "R2022b";
               installDir = "/opt/matlab-test";
             };
           };
@@ -132,13 +138,13 @@
               fromNixos = installedMatlab nixos.environment.systemPackages;
               fromHome = installedMatlab home.home.packages;
             in
-            assert fromNixos.installDir == "/opt/matlab-test" && fromNixos.release == "R2025b";
-            assert fromHome.installDir == "/opt/matlab-test" && fromHome.release == "R2025b";
+            assert fromNixos.installDir == "/opt/matlab-test" && fromNixos.release == "R2022b";
+            assert fromHome.installDir == "/opt/matlab-test" && fromHome.release == "R2022b";
             pkgs.runCommand "check-module" { } ''
-              grep -qx 'Name=MATLAB R2025b' ${fromNixos}/share/applications/matlab.desktop
-              grep -qx 'StartupWMClass=MATLAB R2025b' ${fromNixos}/share/applications/matlab.desktop
+              grep -qx 'Name=MATLAB R2022b' ${fromNixos}/share/applications/matlab.desktop
+              grep -qx 'StartupWMClass=MATLAB R2022b' ${fromNixos}/share/applications/matlab.desktop
               grep -q "/opt/matlab-test" ${fromNixos}/bin/matlab
-              grep -q "no MATLAB R2025b installation" ${fromNixos}/bin/matlab
+              grep -q "no MATLAB R2022b installation" ${fromNixos}/bin/matlab
               touch $out
             '';
 

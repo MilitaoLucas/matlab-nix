@@ -56,6 +56,7 @@ let
     targetPkgs = import ./fhs-packages.nix { inherit lib release; };
     profile = ''
       export LANG="''${LANG:-en_US.UTF-8}"
+      export _JAVA_AWT_WM_NONREPARENTING=1
     '';
     extraPreBwrapCmds = ''
       mkdir -p ${lib.concatStringsSep " " (map (dir: "\"${dir}\"") hiddenDirs)}
